@@ -7,6 +7,7 @@ workflows:
         environment:
             vars:
                 XCODE_PROJECT: "MyApp.xcodeproj"
+                XCODE_SCHEME: "MyApp"
             xcode: 11.7
             cocoapods: default
         triggering:
@@ -19,7 +20,7 @@ workflows:
             cancel_previous_builds: true
         scripts:
             - xcodebuild -list
-            - xcodebuild build -project $XCODE_PROJECT CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+            - xcodebuild build -project $XCODE_PROJECT -scheme $XCODE_SCHEME CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
         artifacts:
             - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
             - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
