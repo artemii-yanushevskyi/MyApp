@@ -20,7 +20,6 @@ workflows:
             cancel_previous_builds: true
         scripts:
             - xcodebuild -list
-            - python3 -v
             - xcodebuild build -project $XCODE_PROJECT -scheme $XCODE_SCHEME CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
             - cat `ls -t "$TMPDIR"/*.log | head -n 1` > $HOME/build.log
         artifacts:
