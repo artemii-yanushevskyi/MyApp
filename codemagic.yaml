@@ -3,7 +3,7 @@
 
 workflows:
     build:
-        name: MyApp build
+        name: Build MyApp
         environment:
             vars:
                 XCODE_PROJECT: MyApp.xcodeproj
