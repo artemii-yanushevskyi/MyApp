@@ -26,3 +26,4 @@ workflows:
             - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
             - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
             - $HOME/build.log
+            - $HOME/xcodebuild_list.txt
