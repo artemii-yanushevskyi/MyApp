@@ -27,3 +27,7 @@ workflows:
             - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
             - $HOME/build.log
             - $HOME/xcodebuild_list
+    pass:
+        name: Pass
+        scripts:
+            - echo "Pass"
