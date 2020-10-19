@@ -28,6 +28,6 @@ workflows:
             - $HOME/build.log
             - $HOME/xcodebuild_list
     pass:
-        name: Pass
+        name: Empty
         scripts:
-            - echo "Pass"
+            - echo "Empty"
