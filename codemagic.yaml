@@ -26,5 +26,7 @@ workflows:
             - $HOME/xcodebuild_list
     pass:
         name: Empty
+        environment:
+            xcode: 11.7
         scripts:
             - echo "Empty"
