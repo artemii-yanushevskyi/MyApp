@@ -28,5 +28,6 @@ workflows:
         name: Empty workflow
         environment:
             xcode: 11.7
+            cocoapods: default
         scripts:
             - echo "Empty"
