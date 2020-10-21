@@ -24,7 +24,7 @@ workflows:
             - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
             - $HOME/build.log
             - $HOME/xcodebuild_list
-    pass:
+    empty:
         name: Empty workflow
         environment:
             xcode: 11.7
