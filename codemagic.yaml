@@ -30,4 +30,3 @@ workflows:
             xcode: 11.7
         scripts:
             - echo "Empty"
-            - echo "git -c user.name="Artemii Yanushevskyi" -c user.email=artemii.yanushevskyi@gmail.com commit -m  --amend --reset-author"
