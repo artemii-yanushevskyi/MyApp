@@ -30,4 +30,4 @@ workflows:
             xcode: 11.7
             cocoapods: default
         scripts:
-            - echo "Empty wf"
+            - echo "Empty"
