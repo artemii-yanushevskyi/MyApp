@@ -30,4 +30,4 @@ workflows:
             xcode: 11.7
             cocoapods: default
         scripts:
-            - echo 2
+            - echo 'git -c user.name="Artemii Yanushevskyi" -c user.email=artemii.yanushevskyi@gmail.com commit --amend --reset-author'
