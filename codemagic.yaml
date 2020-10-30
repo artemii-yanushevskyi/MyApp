@@ -1,7 +1,7 @@
 workflows:
     build:
         name: Build
-        instance_type: mac_pro
+        instance_type: mac_mini
         environment:
             vars:
                 XCODE_PROJECT: MyApp.xcodeproj
