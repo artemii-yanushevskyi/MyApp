@@ -32,6 +32,5 @@ workflows:
             cocoapods: default
         scripts:
             - echo 'git -c user.name="Artemii Yanushevskyi" -c user.email=artemii.yanushevskyi@gmail.com commit --amend --reset-author'
-            - echo 'git -c user.name="Artemii Yanushevskyi" -c user.email=artemii.yanushevskyi@gmail.com commit --amend --reset-author'
             - echo 'git -c user.name="Example" -c user.email=example@example.com commit --amend --reset-author'
             - echo 'git -c user.name="Other" -c user.email=other@example.com commit --amend --reset-author'
