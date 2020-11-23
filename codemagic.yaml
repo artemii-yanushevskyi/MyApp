@@ -1,6 +1,6 @@
 workflows:
-    build:
-        name: iOS App
+    build-1:
+        name: iOS App 1
         environment:
             vars:
                 XCODE_PROJECT: MyApp.xcodeproj
@@ -32,3 +32,27 @@ workflows:
             cocoapods: default
         scripts:
             - echo 22
+    build-2:
+        name: iOS App 2
+        environment:
+            vars:
+                XCODE_PROJECT: MyApp.xcodeproj
+                XCODE_SCHEME: MyApp
+            xcode: 11.7
+            cocoapods: default
+        triggering:
+            events:
+                - push
+                - pull_request
+            branch_patterns:
+                - pattern: '*'
+                  include: true
+                  source: true
+            cancel_previous_builds: true
+        scripts:
+            - cat `ls -t "$TMPDIR"/*.log | head -n 1` > $HOME/build.log
+        artifacts:
+            - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
+            - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
+            - $HOME/build.log
+            - $HOME/xcodebuild_list
