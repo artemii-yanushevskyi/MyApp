@@ -3,21 +3,31 @@ workflows:
         name: iOS App
         environment:
             vars:
-                XCODE_PROJECT: "MyApp.xcodeproj"
-                XCODE_SCHEME: "MyApp"
+                XCODE_PROJECT: MyApp.xcodeproj
+                XCODE_SCHEME: MyApp
             xcode: 11.7
             cocoapods: default
         triggering:
             events:
                 - push, pull_request
             branch_patterns:
-                - pattern: '*'                
+                - pattern: '*'
                   include: true
                   source: true
             cancel_previous_builds: true
         scripts:
-            - xcodebuild -list
+            - xcodebuild -list > $HOME/xcodebuild_list
             - xcodebuild build -project $XCODE_PROJECT -scheme $XCODE_SCHEME CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+            - cat `ls -t "$TMPDIR"/*.log | head -n 1` > $HOME/build.log
         artifacts:
             - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
             - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
+            - $HOME/build.log
+            - $HOME/xcodebuild_list
+    empty:
+        name: Empty workflow
+        environment:
+            xcode: 11.7
+            cocoapods: default
+        scripts:
+            - echo 22
