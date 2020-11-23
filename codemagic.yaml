@@ -1,6 +1,3 @@
-# Check out https://docs.codemagic.io/getting-started/building-a-native-ios-app/ for more information
-# Please review and update values in curly braces
-
 workflows:
     build:
         name: iOS App
