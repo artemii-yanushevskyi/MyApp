@@ -33,7 +33,7 @@ workflows:
         scripts:
             - echo 22
     fail:
-        name: Empty workflow
+        name: Fail workflow
         environment:
             xcode: 11.7
             cocoapods: default
