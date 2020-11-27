@@ -32,8 +32,8 @@ workflows:
             cocoapods: default
         scripts:
             - echo 22
-    fail:
-        name: Fail workflow
+    build-with-mistake:
+        name: Build MyApp
         environment:
             xcode: 11.7
             cocoapods: default
