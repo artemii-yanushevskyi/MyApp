@@ -1,6 +1,6 @@
 workflows:
-    build:
-        name: Build
+    build-1:
+        name: iOS App 1
         environment:
             vars:
                 XCODE_PROJECT: MyApp.xcodeproj
@@ -9,7 +9,8 @@ workflows:
             cocoapods: default
         triggering:
             events:
-                - push, pull_request
+                - push
+                - pull_request
             branch_patterns:
                 - pattern: '*'
                   include: true
@@ -31,3 +32,10 @@ workflows:
             cocoapods: default
         scripts:
             - echo 22
+    build-with-mistake:
+        name: Build MyApp
+        environment:
+            xcode: 11.7
+            cocoapods: default
+        scripts:
+            - cd Non-existent\ Directory
