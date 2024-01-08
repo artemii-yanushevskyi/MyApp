@@ -9,7 +9,7 @@ workflows:
             cocoapods: default
         triggering:
             events:
-                - push, pull_request
+                - push
             branch_patterns:
                 - pattern: '*'
                   include: true
