@@ -5,7 +5,6 @@ workflows:
             vars:
                 XCODE_PROJECT: MyApp.xcodeproj
                 XCODE_SCHEME: MyApp
-            xcode: 11.7
             cocoapods: default
         triggering:
             events:
